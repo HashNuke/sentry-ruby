@@ -362,7 +362,7 @@ module Sentry
     # @yieldparam scope [Scope]
     # @return [void]
     def configure_scope(&block)
-      return unless initialized?
+      return yield unless initialized?
       get_current_hub.configure_scope(&block)
     end
 
